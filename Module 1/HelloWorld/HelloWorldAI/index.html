@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #dbeafe, #f0fdf4);
+    }
+
+    .container {
+      width: min(90%, 420px);
+      padding: 2rem;
+      text-align: center;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #1d4ed8;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 1rem 0;
+      padding: 0.75rem;
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1.25rem;
+      border: 0;
+      border-radius: 6px;
+      color: #ffffff;
+      background: #2563eb;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    #greeting {
+      min-height: 1.5rem;
+      margin-bottom: 0;
+      color: #15803d;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Hello World!</h1>
+    <p>What is your name?</p>
+    <input id="nameInput" type="text" placeholder="Enter your name" />
+    <button id="greetButton" type="button">Say Hello</button>
+    <p id="greeting" aria-live="polite"></p>
+  </main>
+
+  <script>
+    const nameInput = document.getElementById("nameInput");
+    const greetButton = document.getElementById("greetButton");
+    const greeting = document.getElementById("greeting");
+
+    function sayHello() {
+      const name = nameInput.value.trim();
+      greeting.textContent = name ? `Hello ${name}!` : "Please enter your name.";
+    }
+
+    greetButton.addEventListener("click", sayHello);
+    nameInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        sayHello();
+      }
+    });
+  </script>
+</body>
+</html>
