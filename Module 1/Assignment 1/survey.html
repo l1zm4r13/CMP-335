@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="survey.css">
+
+</head>
+<body>
+    <div class="survey-container">
+
+        <h1>SWE Survey Form</h1>
+
+        <h3>
+            Thank you for attending this meeting tonight! Please help us know what you would like to do next time we meet!
+        </h3>
+        <form id="surveyForm">
+
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name here..."
+                pattern="[A-Za-z ]+"
+                title="Please enter letters only."
+                required>
+
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email here..."
+                required>
+
+            <label for="ideas">
+                What is a brand new activity that you would like for us to do as a club?</label>
+            <textarea
+                id="ideas"
+                name="ideas"
+                placeholder="Enter your ideas here..."
+                minlength="5"
+                required></textarea>
+
+            <label for="meetings">
+            How many times a month would you like for us to meet?</label>
+            <select id="meetings" name="meetings" required>
+            <option value="">Select an option</option>
+            <option value="once">Once</option>
+            <option value="twice">Twice</option>
+            <option value="three-or-more">Three times or more</option>
+            <option value="few-per-semester">Few times per semester</option>
+            </select>
+
+            <p>How would you rate today's meeting overall?</p>
+            <input type="radio" id="great" name="rating" value="Great" required>
+            <label for="great">Great</label>
+            <br>
+            <input type="radio" id="good" name="rating" value="Good">
+            <label for="good">Good</label>
+            <br>
+            <input type="radio" id="better" name="rating" value="Could be better">
+            <label for="better">Not the best, could be better</label>
+            <br>
+            <input type="radio" id="notGreat" name="rating" value="Not great">
+            <label for="notGreat">Not great at all</label>
+            <br>
+
+            <p>What is your favorite activity so far?</p>
+            <input type="checkbox" id="chatting" name="activity" value="Chatting">
+            <label for="chatting">
+                Just chatting and catching up with club members
+            </label>
+            <br>
+            <input type="checkbox" id="fundraising" name="activity" value="Fundraising">
+            <label for="fundraising">
+                Doing activities for fundraising
+            </label>
+            <br>
+            <input type="checkbox" id="networking" name="activity" value="Networking">
+            <label for="networking">
+                Networking meetings with contact points for internships and such
+            </label>
+            <br>
+            <input type="checkbox" id="other" name="activity" value="Other">
+            <label for="other">Other</label>
+            <br>
+
+             <p>
+                Any comments or suggestions? Please be honest, we truly appreciate it!
+            </p>
+            <textarea
+                id="comments"
+                name="comments"
+                placeholder="Enter your comment here..."></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+    document.getElementById("surveyForm").addEventListener("submit", function(event) {
+
+        var activities = document.querySelectorAll('input[name="activity"]:checked');
+
+        if (activities.length == 0) {
+
+            event.preventDefault();
+
+            alert("Please select at least one favorite activity.");
+
+        } else {
+
+            event.preventDefault();
+
+            alert("Thank you! Your survey has been submitted successfully!");
+
+        }
+
+    });
+    </script>
+</body>
+</html>
