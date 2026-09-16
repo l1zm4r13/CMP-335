@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Central Tendency Calculator</title>
+
+    <link rel="stylesheet" href="exercise_1.css">
+
+    <script src="exercise_1.js"></script>
+</head>
+<body>
+    <h1>Central Tendency Calculator</h1>
+    <div class="myflexboxRow">
+        <div class="myflexboxColumn">
+            <h2>Enter a Range</h2>
+            <form name="rangeForm">
+                Low Value:
+                <input type="number"
+                        id="low"
+                        name="lowValue"
+                        value="">
+                <br><br>
+                High Value:
+                <input type="number"
+                       id="high"
+                       name="highValue"
+                       value="">
+                <br><br>
+                <input type="button"
+                       value="Set Range"
+                       onclick="setRange()">
+            </form>
+        </div>
+
+        <div class="myflexboxColumn">
+            <h2>Enter a Number</h2>
+            <form name="numberForm">
+                Number:
+                <input type="number"
+                        id="newNumber"
+                        name="newNumber"
+                        value="">
+                <br><br>
+                <input type="button"
+                        value="Add Number"
+                        onclick="addNumber()">
+            </form>
+        </div>
+
+        <div class="myflexboxColumn">
+            <h2>Accepted Numbers</h2>
+            <p id="numberList">Numbers:</p>
+            <p id="meanResult">Mean:</p>
+            <p id="medianResult">Median:</p>
+            <p id="modeResult">Mode:</p>
+        </div>
+    </div>
+</body>
+</html>
