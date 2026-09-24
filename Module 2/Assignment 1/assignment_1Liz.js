@@ -1,0 +1,62 @@
+function validateANDcheck() {
+
+    // place the values in the form into variables
+    let theNewWord = document.forms["palindromeForm"]["newWord"].value;
+    let theNewNumber = document.forms["palindromeForm"]["newNumber"].value;
+
+    // validate that something was entered as a word
+    if (theNewWord == "") {
+        // no word was entered so tell the user
+        alert("Please enter a word.");
+        return false;}
+
+    else if ((theNewNumber != 1) && (theNewNumber != 2)) {
+        // a 1 or 2 was not entered, so tell the user
+        alert("Please enter the numbers between 1 or 2.");
+        // clear the incorrect number
+        document.forms["palindromeForm"]["newNumber"].value = "";
+        return false;}
+
+    else {
+        //use algorithm 1 to check if the word is a palindrome
+        if (theNewNumber == 1) {let result = checkPalindrome1(theNewWord);
+            // create an object for the palindrome result
+            let palindromeResult = {word: theNewWord, algorithm: theNewNumber, isPalindrome: result};
+            alert(palindromeResult.word);
+            alert(palindromeResult.algorithm);
+            alert(palindromeResult.isPalindrome);
+            if (result == true) {document.getElementById("algorithm1Results").innerHTML +="<li>" + theNewWord + " - Palindrome</li>";}
+            else {document.getElementById("algorithm1Results").innerHTML +="<li>" + theNewWord + " - Not a Palindrome</li>";}
+        }
+
+        //use algorithm 2 to check if the word is a palindrome
+        else if (theNewNumber == 2) {let result = checkPalindrome2(theNewWord);
+            if (result == true) {document.getElementById("algorithm2Results").innerHTML +="<li>" + theNewWord + " - Palindrome</li>";}
+            else {document.getElementById("algorithm2Results").innerHTML +="<li>" + theNewWord + " - Not a Palindrome</li>";}
+        }
+    }
+}
+
+function checkPalindrome1(word) {
+
+    //declare variables to hold the start and end of the word
+    let start = 0;
+    let end = word.length - 1;
+
+    // loop through the word, comparing the first and last letters, then the second and second to last letters, etc.
+    while (start < end) {
+        if (word[start] != word[end]) {return false;}
+        // if the letters match, move the start and end pointers closer to the middle of the word
+        start++;
+        end--;
+    } 
+
+    // if the loop completes without finding any mismatched letters, the word is a palindrome
+    return true;
+}
+
+function checkPalindrome2(word) {
+    // check if the word is the same forwards and backwards
+    return word == word.split("").reverse().join("");
+}
+

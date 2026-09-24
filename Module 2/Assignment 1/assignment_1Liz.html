@@ -1,5 +1,7 @@
+<!--declare document type and language-->
 <!DOCTYPE html>
 <html lang="en">
+<!-- head section with meta information, title, and links to CSS and JS files -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +10,7 @@
     <link rel="stylesheet" href="assignment_1Liz.css">
     <script src="assignment_1Liz.js"></script>
 </head>
+<!-- body section with a form for user input -->
 <body>
     <h1>Palindrome Checker</h1>
     <form id="palindromeForm">
@@ -16,6 +19,18 @@
         <br><br>
         <label for="newNumber">Enter 1 or 2 for the algorithm:</label>
         <input type="number" id="newNumber" name="newNumber">
+        <br><br>
+        <input type="button" value="Check Palindrome" onclick="validateANDcheck()">
     </form>
+    <!-- divs to display results for algorithm 1 -->
+    <div>
+        <h2>Algorithm 1 Results</h2>
+        <ul id="algorithm1Results"></ul>
+    </div>
+    <!-- divs to display results for algorithm 2 -->
+    <div>
+        <h2>Algorithm 2 Results</h2>
+        <ul id="algorithm2Results"></ul>
+    </div>
 </body>
 </html>
