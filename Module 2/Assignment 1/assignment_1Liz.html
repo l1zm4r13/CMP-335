@@ -13,24 +13,29 @@
 <!-- body section with a form for user input -->
 <body>
     <h1>Palindrome Checker</h1>
-    <form id="palindromeForm">
-        <label for="newWord">Enter a word:</label>
-        <input type="text" id="newWord" name="newWord">
-        <br><br>
-        <label for="newNumber">Enter 1 or 2 for the algorithm:</label>
-        <input type="number" id="newNumber" name="newNumber">
-        <br><br>
-        <input type="button" value="Check Palindrome" onclick="validateANDcheck()">
-    </form>
+    <div class="myflexboxRow">
+        <div class="myflexboxColumn">
+            <form id="palindromeForm">
+                <label for="newWord">Enter a word:</label>
+                <input type="text" id="newWord" name="newWord">
+                <br><br>
+                <label for="newNumber">Enter 1 or 2 for the algorithm:</label>
+                <input type="number" id="newNumber" name="newNumber">
+                <br><br>
+                <input type="button" value="Check Palindrome" onclick="validateANDcheck()">
+            </form>
+        </div>
     <!-- divs to display results for algorithm 1 -->
-    <div>
-        <h2>Algorithm 1 Results</h2>
-        <ul id="algorithm1Results"></ul>
-    </div>
+        <div class="myflexboxColumn">
+                <h2>Algorithm 1 Results</h2>
+                <ul id="algorithm1Results"></ul>
+        </div>
+        
     <!-- divs to display results for algorithm 2 -->
-    <div>
-        <h2>Algorithm 2 Results</h2>
-        <ul id="algorithm2Results"></ul>
+        <div class="myflexboxColumn">
+            <h2>Algorithm 2 Results</h2>
+            <ul id="algorithm2Results"></ul>
+        </div>
     </div>
 </body>
 </html>
