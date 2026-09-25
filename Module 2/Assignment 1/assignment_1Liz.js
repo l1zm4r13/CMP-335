@@ -22,17 +22,18 @@ function validateANDcheck() {
         if (theNewNumber == 1) {let result = checkPalindrome1(theNewWord);
             // create an object for the palindrome result
             let palindromeResult = {word: theNewWord, algorithm: theNewNumber, isPalindrome: result};
-            alert(palindromeResult.word);
-            alert(palindromeResult.algorithm);
-            alert(palindromeResult.isPalindrome);
-            if (result == true) {document.getElementById("algorithm1Results").innerHTML +="<li>" + theNewWord + " - Palindrome</li>";}
-            else {document.getElementById("algorithm1Results").innerHTML +="<li>" + theNewWord + " - Not a Palindrome</li>";}
+            //check for the word for palindrome with algorithm 1 and add it to the list 
+            if (palindromeResult.isPalindrome == true) {document.getElementById("algorithm1Results").innerHTML +="<li>" + palindromeResult.word + " - Palindrome</li>";}
+            else {document.getElementById("algorithm1Results").innerHTML +="<li>" + palindromeResult.word + " - Not a Palindrome</li>";}
         }
 
         //use algorithm 2 to check if the word is a palindrome
         else if (theNewNumber == 2) {let result = checkPalindrome2(theNewWord);
-            if (result == true) {document.getElementById("algorithm2Results").innerHTML +="<li>" + theNewWord + " - Palindrome</li>";}
-            else {document.getElementById("algorithm2Results").innerHTML +="<li>" + theNewWord + " - Not a Palindrome</li>";}
+            //create an object for the palindrome result 
+            let palindromeResult = {word: theNewWord, algorithm: theNewNumber, isPalindrome: result};
+            //check for the word for palindrome with algorithm 2 and add it to the list
+            if (palindromeResult.isPalindrome == true) {document.getElementById("algorithm2Results").innerHTML +="<li>" + palindromeResult.word + " - Palindrome</li>";}
+            else {document.getElementById("algorithm2Results").innerHTML +="<li>" + palindromeResult.word + " - Not a Palindrome</li>";}
         }
     }
 }
