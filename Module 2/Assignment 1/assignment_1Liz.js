@@ -3,6 +3,13 @@ function validateANDcheck() {
     // place the values in the form into variables
     let theNewWord = document.forms["palindromeForm"]["newWord"].value;
     let theNewNumber = document.forms["palindromeForm"]["newNumber"].value;
+    let theCaseOption = document.querySelector('input[name="caseOption"]:checked').value;
+
+    // save the original word for displaying the result
+    let originalWord = theNewWord;
+
+    // make the word lowercase if case insensitive is selected
+    if (theCaseOption == "insensitive") {theNewWord = theNewWord.toLowerCase();}
 
     // validate that something was entered as a word
     if (theNewWord == "") {
@@ -21,7 +28,7 @@ function validateANDcheck() {
         //use algorithm 1 to check if the word is a palindrome
         if (theNewNumber == 1) {let result = checkPalindrome1(theNewWord);
             // create an object for the palindrome result
-            let palindromeResult = {word: theNewWord, algorithm: theNewNumber, isPalindrome: result};
+            let palindromeResult = {word: originalWord, algorithm: theNewNumber, caseOption: theCaseOption, isPalindrome: result};
             //check for the word for palindrome with algorithm 1 and add it to the list 
             if (palindromeResult.isPalindrome == true) {document.getElementById("algorithm1Results").innerHTML +="<li>" + palindromeResult.word + " - Palindrome</li>";}
             else {document.getElementById("algorithm1Results").innerHTML +="<li>" + palindromeResult.word + " - Not a Palindrome</li>";}
@@ -30,7 +37,7 @@ function validateANDcheck() {
         //use algorithm 2 to check if the word is a palindrome
         else if (theNewNumber == 2) {let result = checkPalindrome2(theNewWord);
             //create an object for the palindrome result 
-            let palindromeResult = {word: theNewWord, algorithm: theNewNumber, isPalindrome: result};
+            let palindromeResult = {word: originalWord, algorithm: theNewNumber, caseOption: theCaseOption, isPalindrome: result};
             //check for the word for palindrome with algorithm 2 and add it to the list
             if (palindromeResult.isPalindrome == true) {document.getElementById("algorithm2Results").innerHTML +="<li>" + palindromeResult.word + " - Palindrome</li>";}
             else {document.getElementById("algorithm2Results").innerHTML +="<li>" + palindromeResult.word + " - Not a Palindrome</li>";}
@@ -39,7 +46,7 @@ function validateANDcheck() {
         // use algorithm 3 to check if the word is a palindrome
         else if (theNewNumber == 3) {let result = checkPalindrome3(theNewWord);
         // create an object for the palindrome result
-        let palindromeResult = {word: theNewWord, algorithm: theNewNumber, isPalindrome: result};
+        let palindromeResult = {word: originalWord, algorithm: theNewNumber, caseOption: theCaseOption, isPalindrome: result};
         // check the word for palindrome with algorithm 3 and add it to the list
         if (palindromeResult.isPalindrome == true) {document.getElementById("algorithm3Results").innerHTML +="<li>" + palindromeResult.word + " - Palindrome</li>";}
         else {document.getElementById("algorithm3Results").innerHTML +="<li>" + palindromeResult.word + " - Not a Palindrome</li>";}
