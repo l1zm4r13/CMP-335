@@ -61,3 +61,13 @@ function checkPalindrome2(word) {
     return word == word.split("").reverse().join("");
 }
 
+function checkPalindrome3(word) {
+    // if there is only one or no characters left, it is a palindrome
+    if (word.length <= 1) {return true;}
+    
+    // if the first and last characters do not match, it is not a palindrome
+    if (word[0] != word[word.length - 1]) {return false;}
+
+    // remove the first and last characters and check again
+    return checkPalindrome3(word.slice(1, -1));
+}
