@@ -19,9 +19,19 @@
                 <label for="newWord">Enter a word:</label>
                 <input type="text" id="newWord" name="newWord">
                 <br><br>
+                
                 <label for="newNumber">Enter 1, 2, or 3 for the algorithm:</label>
                 <input type="number" id="newNumber" name="newNumber">
                 <br><br>
+
+                <label>Case sensitivity:</label>
+                <br>
+                <input type="radio" id="caseSensitive" name="caseOption" value="sensitive" checked>
+                <label for="caseSensitive">Case Sensitive</label>
+                <input type="radio" id="caseInsensitive" name="caseOption" value="insensitive">
+                <label for="caseInsensitive">Case Insensitive</label>
+                <br><br>
+                
                 <input type="button" value="Check Palindrome" onclick="validateANDcheck()">
             </form>
         </div>
