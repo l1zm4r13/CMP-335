@@ -11,7 +11,7 @@ function validateANDcheck() {
         return false;}
 
     else if ((theNewNumber != 1) && (theNewNumber != 2) && (theNewNumber != 3)) {
-        // a 1 or 2 was not entered, so tell the user
+        // a 1, 2, or 3 was not entered, so tell the user
         alert("Please enter a number between 1 and 3.");
         // clear the incorrect number
         document.forms["palindromeForm"]["newNumber"].value = "";
@@ -34,6 +34,15 @@ function validateANDcheck() {
             //check for the word for palindrome with algorithm 2 and add it to the list
             if (palindromeResult.isPalindrome == true) {document.getElementById("algorithm2Results").innerHTML +="<li>" + palindromeResult.word + " - Palindrome</li>";}
             else {document.getElementById("algorithm2Results").innerHTML +="<li>" + palindromeResult.word + " - Not a Palindrome</li>";}
+        }
+
+        // use algorithm 3 to check if the word is a palindrome
+        else if (theNewNumber == 3) {let result = checkPalindrome3(theNewWord);
+        // create an object for the palindrome result
+        let palindromeResult = {word: theNewWord, algorithm: theNewNumber, isPalindrome: result};
+        // check the word for palindrome with algorithm 3 and add it to the list
+        if (palindromeResult.isPalindrome == true) {document.getElementById("algorithm3Results").innerHTML +="<li>" + palindromeResult.word + " - Palindrome</li>";}
+        else {document.getElementById("algorithm3Results").innerHTML +="<li>" + palindromeResult.word + " - Not a Palindrome</li>";}
         }
     }
 }
