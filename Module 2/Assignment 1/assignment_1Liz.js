@@ -10,9 +10,9 @@ function validateANDcheck() {
         alert("Please enter a word.");
         return false;}
 
-    else if ((theNewNumber != 1) && (theNewNumber != 2)) {
+    else if ((theNewNumber != 1) && (theNewNumber != 2) && (theNewNumber != 3)) {
         // a 1 or 2 was not entered, so tell the user
-        alert("Please enter the numbers between 1 or 2.");
+        alert("Please enter a number between 1 and 3.");
         // clear the incorrect number
         document.forms["palindromeForm"]["newNumber"].value = "";
         return false;}
