@@ -14,46 +14,63 @@
     <script src="assignment_1Liz.js"></script>
 </head>
 <!-- body section with a form for user input -->
-<body>
-    <h1>Palindrome Checker</h1>
+<body class="p-3">
+    <h1 class="mb-4">Palindrome Checker</h1>
+    <!-- form for user input with labels, input fields, and a button to check for palindromes -->
     <div class="myflexboxRow">
         <div class="myflexboxColumn">
+            <!-- form for user input -->
             <form id="palindromeForm">
                 <label for="newWord">Enter a word:</label>
-                <input type="text" id="newWord" name="newWord">
+                <input type="text" class="form-control" id="newWord" name="newWord">
                 <br><br>
-                
+                <!-- input field for selecting the algorithm to use -->
                 <label for="newNumber">Enter 1, 2, or 3 for the algorithm:</label>
-                <input type="number" id="newNumber" name="newNumber">
+                <input type="number" class="form-control" id="newNumber" name="newNumber">
                 <br><br>
-
+                <!-- radio buttons for selecting case sensitivity -->
                 <label>Case sensitivity:</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="caseSensitive" name="caseOption" value="sensitive" checked>
+                    <label class="form-check-label" for="caseSensitive">Case Sensitive</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="caseInsensitive" name="caseOption" value="insensitive">
+                    <label class="form-check-label" for="caseInsensitive">Case Insensitive</label>
+                </div>
                 <br>
-                <input type="radio" id="caseSensitive" name="caseOption" value="sensitive" checked>
-                <label for="caseSensitive">Case Sensitive</label>
-                <input type="radio" id="caseInsensitive" name="caseOption" value="insensitive">
-                <label for="caseInsensitive">Case Insensitive</label>
-                <br><br>
-                
+                <!-- button to check for palindromes -->
                 <input type="button" class="btn btn-primary" value="Check Palindrome" onclick="validateANDcheck()">
             </form>
         </div>
         <!-- divs to display results for algorithm 1 -->
         <div class="myflexboxColumn">
-                <h2>Algorithm 1 Results</h2>
-                <ul id="algorithm1Results"></ul>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Algorithm 1 Results</h2>
+                    <ul id="algorithm1Results"></ul>
+                </div>
+            </div>
         </div>
         
         <!-- divs to display results for algorithm 2 -->
         <div class="myflexboxColumn">
-            <h2>Algorithm 2 Results</h2>
-            <ul id="algorithm2Results"></ul>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Algorithm 2 Results</h2>
+                    <ul id="algorithm2Results"></ul>
+                </div>
+            </div>   
         </div>
 
         <!-- divs to display results for algorithm 3 -->
         <div class="myflexboxColumn">
-            <h2>Algorithm 3 Results</h2>
-            <ul id="algorithm3Results"></ul>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Algorithm 3 Results</h2>
+                    <ul id="algorithm3Results"></ul>
+                </div>
+            </div>
         </div>
     </div>
 </body>
