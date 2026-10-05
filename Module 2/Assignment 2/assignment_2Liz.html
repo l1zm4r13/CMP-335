@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Disney Character Explorer</title>
+    <link rel="stylesheet" href="assignment_2Liz.css">
+    <script src="assignment_2Liz.js"></script>
+</head>
+
+<body>
+    <h1>Disney Character Explorer</h1>
+    <form id="characterForm">
+    <label for="characterName">Enter a Disney character:</label>
+    <input type="text"
+           id="characterName"
+           name="characterName">
+    <br><br>
+    <input type="button"
+           value="Search Character"
+           onclick="getDisneyCharacter()">
+    </form>
+
+    <h2>Character Results</h2>
+    <div id="characterResults"></div>
+
+</body>
+</html>
