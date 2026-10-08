@@ -20,3 +20,10 @@
       flex-direction: column;
     }
   }
+
+  /* Keep Disney character images at a reasonable size */
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
