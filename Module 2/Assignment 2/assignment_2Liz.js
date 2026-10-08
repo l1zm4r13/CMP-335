@@ -4,7 +4,7 @@ async function getDisneyCharacter() {
     let theCharacter = document.forms["characterForm"]["characterName"].value;
 
     // make sure a character name was entered
-    if (theCharacter == "") {alert("Please enter a Disney character.");
+    if (theCharacter.trim() == "") {alert("Please enter a Disney character.");
         return false;
     }
 
@@ -45,14 +45,14 @@ async function getDisneyCharacter() {
             // loop through each character in the array
             for (let character of jsonData.data) {
                 // store the films and TV shows
-                let films = character.films;
-                let tvShows = character.tvShows;
+                let films = character.films.join(", ");
+                let tvShows = character.tvShows.join(", ");
 
                 // check if the character has any films
-                if (films.length == 0) {films = "None listed";}
+                if (films.length == "") {films = "None listed";}
 
                 // check if the character has any TV shows
-                if (tvShows.length == 0) {tvShows = "None listed";}
+                if (tvShows.length == "") {tvShows = "None listed";}
 
                 // display each character's name
                 document.getElementById("characterResults").innerHTML += 
@@ -69,14 +69,14 @@ async function getDisneyCharacter() {
             }
         } else {
             // store the films and TV shows for the single character
-            let films = jsonData.data.films;
-            let tvShows = jsonData.data.tvShows;
+            let films = jsonData.data.films.join(", ");;
+            let tvShows = jsonData.data.tvShows.join(", ");
 
             // check if the character has any films
-            if (films.length == 0) {films = "None listed";}
+            if (films.length == "") {films = "None listed";}
 
             // check if the character has any TV shows
-            if (tvShows.length == 0) {tvShows = "None listed";}
+            if (tvShows.length == "") {tvShows = "None listed";}
 
             // display the single character inside a Bootstrap card
             document.getElementById("characterResults").innerHTML +=
