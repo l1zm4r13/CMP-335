@@ -4,11 +4,11 @@ const app = express();
 app.use(express.json());
 
 const courses = [
-    { id: 1, name: "course1" },
-    { id: 2, name: "course2" },
-    { id: 3, name: "course3" },
-    { id: 4, name: "Data Analytics" },
-    { id: 5, name: "Artificial Intelligence" }
+    { id: 1, name: "course1", description: "Introduction to course1", duration: "4 weeks", level: "Beginner" },
+    { id: 2, name: "course2", description: "Introduction to course2", duration: "6 weeks", level: "Intermediate" },
+    { id: 3, name: "course3", description: "Introduction to course3", duration: "8 weeks", level: "Advanced" },
+    { id: 4, name: "Data Analytics", description: "Learn data analytics", duration: "5 weeks", level: "Intermediate" },
+    { id: 5, name: "Artificial Intelligence", description: "Learn artificial intelligence", duration: "10 weeks", level: "Advanced" }
 ];
 
 app.get("/", (req, res) => {
@@ -38,7 +38,10 @@ app.post("/api/courses", (req, res) => {
     id: courses.length > 0
         ? Math.max(...courses.map(c => c.id)) + 1
         : 1,
-    name: req.body.name
+    name: req.body.name,
+    description: req.body.description,
+    duration: req.body.duration,
+    level: req.body.level
     };
 
     courses.push(course);
@@ -57,6 +60,9 @@ app.put("/api/courses/:id", (req, res) => {
     }
 
     course.name = req.body.name;
+    course.description = req.body.description;
+    course.duration = req.body.duration;
+    course.level = req.body.level;
     res.send(course);
 });
 
